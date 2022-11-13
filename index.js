@@ -137,18 +137,25 @@ bot.on('sticker', ctx => {
 })
 
 bot.on('voice', ctx => {
-    const voz = ctx.update.message.voice
-    ctx.reply(`Uauuu! Com apenas ${voz.duration} segundos percebi que voce pode investir em uma carreira de cantor(a)!`)
-    ctx.replyWithSticker('CAACAgEAAxkBAAIBlmNxK9Ws6lMJmv19iGxzuQb21vYbAALlAAN_lFhECX-kjZpFvuMrBA')
+    if (isAllowed(ctx)) {
+        const voz = ctx.update.message.voice
+        ctx.reply(`Uauuu! Com apenas ${voz.duration} segundos percebi que voce pode investir em uma carreira de cantor(a)!`)
+        ctx.replyWithSticker('CAACAgEAAxkBAAIBlmNxK9Ws6lMJmv19iGxzuQb21vYbAALlAAN_lFhECX-kjZpFvuMrBA')
+    } else {
+        ctx.reply(`Desculpa! infelizmente so devo responder a um grupo especifico de usuarios.`)
+    }
 })
 
 bot.on('photo', ctx => {
-    const foto = ctx.update.message.photo
-    ctx.replyWithMarkdownV2(`*Que foto legal*`)
-    foto.forEach((photo, i) => {
-      ctx.reply(`A ${i}ª foto tem resolução de:
-                ${photo.width} x ${photo.height} pixels!`)
-    })
+    if (isAllowed(ctx)) {
+        const foto = ctx.update.message.photo
+        ctx.replyWithMarkdownV2(`*Que foto legal*`)
+        foto.forEach((photo, i) => {
+        ctx.reply(`A ${i}ª foto tem resolução de ${photo.width} x ${photo.height} pixels!`)
+        })
+    } else {
+        ctx.reply(`Desculpa! infelizmente so devo responder a um grupo especifico de usuarios.`)
+    }
 })
 
 bot.startPolling()
