@@ -1,5 +1,5 @@
 {
-  "name": "bot_node_telegram_unc_2022",
+  "name": "unc_chatbot_m2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/professoremerson/bot_node_telegram_unc_2022.git"
+    "url": "git+https://github.com/LuizAugustoGrein/unc_chatbot_m2.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/professoremerson/bot_node_telegram_unc_2022/issues"
+    "url": "https://github.com/LuizAugustoGrein/unc_chatbot_m2/issues"
   },
-  "homepage": "https://github.com/professoremerson/bot_node_telegram_unc_2022#readme",
+  "homepage": "https://github.com/LuizAugustoGrein/unc_chatbot_m2#readme",
   "dependencies": {
     "axios": "^1.1.2",
     "moment": "^2.29.4",
